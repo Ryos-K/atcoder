@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 #define MOD 998244353
 using namespace std;
 typedef long long ll;
