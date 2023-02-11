@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+if [ $# -eq 3 ] ; then
+    echo 'Usage : jdg d abc000'
+    echo 'Usage : jdg t a'
+    exit 1
+fi
+
+if [ $1 = t ] ; then
+    contest=$(ls ./test/)
+    if [ "${contest:0:3}" = abc ] ; then
+        g++ "./ABC/$contest/$2.cpp" -o ./output/a.out -I./ac-library
+        oj t -c "./output/a.out" -d "./test/$contest/$2" -S -N 
+    elif [ "${contest:0:3}" = arc ] ; then
+        g++ "./ARC/$contest/$2.cpp" -o ./output/a.out -I./ac-library
+        oj t -c "./output/a.out" -d "./test/$contest/$2" -S -N 
+    fi
+elif [ $1 = d ] ; then
+    rm -rf ./test/*
+    mkdir "./test/$2"
+    for name in a b c d e f g h ; do
+        mkdir "./test/$2/$name"
+        oj d -d "./test/$2/$name" "https://atcoder.jp/contests/abc288/tasks/$2_$name"
+    done
+
+fi
