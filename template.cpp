@@ -6,7 +6,7 @@ using namespace atcoder;
 typedef long long ll;
 #define rep(i, n, m) for (int i = n; i < (int)(m); ++i)
 #define rrep(i, n, m) for (int i = n - 1; i >= (int)(m); --i)
-#define MOD modint998244353
+#define MOD 998244353
 
 int main()
 {
