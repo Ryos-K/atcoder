@@ -1,5 +1,5 @@
 *.exe
-test
+test/*
 ac-library/*
 *.out
 output/*

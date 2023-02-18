@@ -1,18 +1,24 @@
 #!/usr/bin/bash
 
-if [ "$#" -ne 1 ] ; then
-    echo 'Usage : setup abc000'
-    exit 1
-fi
 
 if [[ "${1:0:3}" =~ [aA][bB][cC] ]] ; then
     mkdir "./ABC/$1"
-    for name in a b c d e f g h; do
-        cp ./template.cpp "./ABC/$1/$name.cpp"
-    done
+    if [ "$#" -eq 2 ] ; then
+        cp ./template.cpp "./ABC/$1/$2.cpp"
+    else
+        for name in a b c d e f g h; do
+            cp ./template.cpp "./ABC/$1/$name.cpp"
+        done
+    fi
 elif [[ "${1:0:3}" =~ [aA][rR][cC] ]] ; then 
     mkdir "./ARC/$1"
-    for name in a b c d e f g h; do
-        cp ./template.cpp "./ARC/$1/$name.cpp"
-    done
+    if [ "$#" -eq 2 ] ; then
+        cp ./template.cpp "./ABC/$1/$2.cpp"
+    else
+        for name in a b c d e f; do
+            cp ./template.cpp "./ARC/$1/$name.cpp"
+        done
+    fi
+else 
+    echo 'Usage : setup abc000'
 fi
