@@ -18,9 +18,11 @@ template <class T, class E> using P = std::pair<T, E>;
 #define LINF 1e18
 #define MOD 998244353
 // clang-format on
-void sol() {}
+void sol() {
+    // code
+}
 
 int main() {
-    for (int i = 0; i < 10; ++i)
-        return 0;
+    // code
+    return 0;
 }
