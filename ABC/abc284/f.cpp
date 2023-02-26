@@ -23,33 +23,17 @@ void sol() {
 }
 
 int main() {
-    int n, m, u, v;
-    cin >> n >> m;
-    V<V<int>> g(n, V<int>(0));
-    V<bool> flg(n, false);
-    rep(i, 0, m) {
-        cin >> u >> v;
-        u--;
-        v--;
-        g[u].push_back(v);
-        g[v].push_back(u);
-    }
-    int cnt = 0;
-    auto dfs = [&](auto &&self, int pos) {
-        flg[pos] = true;
-        cnt++;
-        if (cnt == 1e6)
-            return true;
-        fore(v, g[pos]) {
-            if (flg[v])
-                continue;
-            if (self(self, v))
-                return true;
-        }
-        flg[pos] = false;
-        return false;
-    };
-    dfs(dfs, 0);
-    cout << cnt << endl;
-    return 0;
+    int n;
+    string t;
+    cin >> n >> t;
+
+    string a = t.substr(0, n);
+    string b = t.substr(n);
+    reverse(all(b));
+
+    string x = a + b;
+    V<int> za_x = z_algorithm(x);
+    za_x.push_back(0);
+
+        return 0;
 }

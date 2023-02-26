@@ -23,33 +23,19 @@ void sol() {
 }
 
 int main() {
-    int n, m, u, v;
-    cin >> n >> m;
-    V<V<int>> g(n, V<int>(0));
-    V<bool> flg(n, false);
-    rep(i, 0, m) {
-        cin >> u >> v;
-        u--;
-        v--;
-        g[u].push_back(v);
-        g[v].push_back(u);
-    }
-    int cnt = 0;
-    auto dfs = [&](auto &&self, int pos) {
-        flg[pos] = true;
-        cnt++;
-        if (cnt == 1e6)
-            return true;
-        fore(v, g[pos]) {
-            if (flg[v])
-                continue;
-            if (self(self, v))
-                return true;
+    int n;
+    cin >> n;
+    V<int> a(n);
+    V<ll> p(n + 1, 0), dp(n + 1, 0);
+    veccin(a);
+    rep(i, 2, n + 1) { p[i] = p[i - 1] + a[i / 2 - 1]; }
+    rep(i, 0, n) {
+        rep(j, 1, n + 1) {
+            if (i + j > n)
+                break;
+            chmax(dp[i + j], dp[i] + p[j]);
         }
-        flg[pos] = false;
-        return false;
-    };
-    dfs(dfs, 0);
-    cout << cnt << endl;
+    }
+    cout << dp[n] << endl;
     return 0;
 }
