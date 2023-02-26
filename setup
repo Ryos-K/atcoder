@@ -21,4 +21,5 @@ elif [[ "${1:0:3}" =~ [aA][rR][cC] ]] ; then
     fi
 else 
     echo 'Usage : setup abc000'
+    echo 'Usage : setup abc000 a'
 fi

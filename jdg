@@ -19,7 +19,7 @@ elif [ $1 = d ] ; then
 
 elif [ $1 = i ] ; then
     rm -rf ./test/*
-    mkdir "./test/$2/$3"
+    mkdir -p "./test/$2/$3"
     oj d -d "./test/$2/$3" "https://atcoder.jp/contests/$2/tasks/$2_$3"
 else
     echo 'Usage : jdg d abc000'
