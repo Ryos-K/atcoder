@@ -1,8 +1,8 @@
 // clang-format off
-#include <atcoder/all>
+//#include <atcoder/all>
 #include <bits/stdc++.h>
 using namespace std;
-using namespace atcoder;
+//using namespace atcoder;
 typedef long long ll;
 template <class T> using V = std::vector<T>;
 template <class T, class E> using P = std::pair<T, E>;
@@ -51,6 +51,9 @@ int main() {
     int n, k;
     string s;
     cin >> n >> k >> s;
+
+    cout << "Hello" << endl;
+
     int cntx = cnt_x(s);
 
     if (cntx == k) {
@@ -86,6 +89,7 @@ int main() {
         if (i == n - 1)
             vec.push_back(cnt);
     }
+
     if (vec.size() > 2) {
         sort(++vec.begin(), --vec.end());
         //  veccout(vec);

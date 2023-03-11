@@ -3,7 +3,7 @@
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $workspaceRoot && g++ $fullFileName -o ./output/$fileNameWithoutExt -I./ac-library && ./output/$fileNameWithoutExt",
+        "cpp": "cd $workspaceRoot && g++ $fullFileName -o ./output/a.out -I./ac-library && ./output/a.out",
         //"cpp": "echo $dirWithoutTrailingSlash",
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
@@ -127,7 +127,9 @@
         "valarray": "cpp",
         "any": "cpp",
         "bit": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "strstream": "cpp",
+        "all": "cpp"
     },
     "cmake.configureOnOpen": false
 }
