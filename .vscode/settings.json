@@ -131,5 +131,6 @@
         "strstream": "cpp",
         "all": "cpp"
     },
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": "${workspaceFolder}/ac-library/test/benchmark"
 }
