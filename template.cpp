@@ -18,11 +18,16 @@ template <class T, class E> using P = std::pair<T, E>;
 #define LINF 1e18
 #define MOD 998244353
 // clang-format on
-void sol() {
-    // code
+// definition of variables
+
+void init()
+{
+    // console input to variables
 }
 
-int main() {
+int main()
+{
     // code
+    init();
     return 0;
 }
